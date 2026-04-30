@@ -9,66 +9,101 @@ export const site = {
   github: 'https://github.com/DaRealSun',
   linkedin: 'https://linkedin.com/in/son-leminh',
   resumeUrl: '/resume.pdf',
+  profileImage: '/me/profile.jpg',
+  aboutImage: '/me/with-duke.jpg',
   summary:
     'Backend Java engineer focused on Spring Boot services, JVM performance, and applied AI integration. I own services end-to-end — API design and database schema through deployment and on-call. Recent work centers on Retrieval Augmented Generation pipelines using Spring AI and LangChain4j, and modernizing concurrency with Java Virtual Threads.',
 };
 
-export const skillGroups = [
+// Each skill: { label, icon } where icon is an iconify identifier from
+// @iconify-json/logos (colored brand logos) or @iconify-json/simple-icons.
+// Pass null for skills with no clean logo.
+export type Skill = { label: string; icon: string | null };
+
+export const skillGroups: { title: string; items: Skill[] }[] = [
   {
     title: 'Languages',
-    items: ['Java 11/17/21', 'TypeScript', 'JavaScript', 'Python', 'SQL'],
+    items: [
+      { label: 'Java 11/17/21', icon: 'logos:java' },
+      { label: 'TypeScript', icon: 'logos:typescript-icon' },
+      { label: 'JavaScript', icon: 'logos:javascript' },
+      { label: 'Python', icon: 'logos:python' },
+      { label: 'SQL', icon: 'simple-icons:postgresql' },
+    ],
   },
   {
     title: 'Backend',
     items: [
-      'Spring Boot',
-      'Spring Data JPA',
-      'Spring Security',
-      'Spring AI',
-      'Hibernate',
-      'PostgreSQL',
-      'Apache Kafka',
-      'Redis',
+      { label: 'Spring Boot', icon: 'logos:spring-icon' },
+      { label: 'Spring Data JPA', icon: 'logos:spring-icon' },
+      { label: 'Spring Security', icon: 'logos:spring-icon' },
+      { label: 'Spring AI', icon: 'logos:spring-icon' },
+      { label: 'Hibernate', icon: 'logos:hibernate' },
+      { label: 'PostgreSQL', icon: 'logos:postgresql' },
+      { label: 'Apache Kafka', icon: 'logos:kafka-icon' },
+      { label: 'Redis', icon: 'logos:redis' },
     ],
   },
   {
     title: 'JVM & Concurrency',
     items: [
-      'Virtual Threads (Loom)',
-      'CompletableFuture',
-      'JDK Flight Recorder',
-      'GC tuning',
-      'JMH',
+      { label: 'Virtual Threads (Loom)', icon: 'logos:java' },
+      { label: 'CompletableFuture', icon: 'logos:java' },
+      { label: 'JDK Flight Recorder', icon: 'logos:java' },
+      { label: 'GC tuning', icon: null },
+      { label: 'JMH', icon: null },
     ],
   },
   {
     title: 'AI / ML',
     items: [
-      'LangChain4j',
-      'pgvector',
-      'RAG',
-      'Model Context Protocol',
-      'TensorFlow',
-      'Keras',
-      'CNNs',
-      'MediaPipe',
+      { label: 'LangChain4j', icon: 'simple-icons:langchain' },
+      { label: 'pgvector', icon: 'logos:postgresql' },
+      { label: 'RAG', icon: null },
+      { label: 'Model Context Protocol', icon: 'simple-icons:anthropic' },
+      { label: 'TensorFlow', icon: 'logos:tensorflow' },
+      { label: 'Keras', icon: 'simple-icons:keras' },
+      { label: 'CNNs', icon: null },
+      { label: 'MediaPipe', icon: 'simple-icons:google' },
     ],
   },
   {
     title: 'Testing',
-    items: ['JUnit 5', 'Mockito', 'Testcontainers', 'Jest', 'React Testing Library'],
+    items: [
+      { label: 'JUnit 5', icon: 'logos:java' },
+      { label: 'Mockito', icon: null },
+      { label: 'Testcontainers', icon: 'logos:docker-icon' },
+      { label: 'Jest', icon: 'logos:jest' },
+      { label: 'React Testing Library', icon: 'logos:react' },
+    ],
   },
   {
     title: 'Observability',
-    items: ['OpenTelemetry', 'Jaeger', 'Micrometer'],
+    items: [
+      { label: 'OpenTelemetry', icon: 'logos:opentelemetry-icon' },
+      { label: 'Jaeger', icon: 'simple-icons:jaeger' },
+      { label: 'Micrometer', icon: null },
+    ],
   },
   {
     title: 'DevOps',
-    items: ['Docker', 'Maven', 'Gradle', 'GitHub Actions', 'AWS', 'Google Cloud'],
+    items: [
+      { label: 'Docker', icon: 'logos:docker-icon' },
+      { label: 'Maven', icon: 'logos:maven' },
+      { label: 'Gradle', icon: 'logos:gradle' },
+      { label: 'GitHub Actions', icon: 'logos:github-actions' },
+      { label: 'AWS', icon: 'logos:aws' },
+      { label: 'Google Cloud', icon: 'logos:google-cloud' },
+    ],
   },
   {
     title: 'Frontend',
-    items: ['React', 'Redux Toolkit', 'React Router', 'Tailwind CSS'],
+    items: [
+      { label: 'React', icon: 'logos:react' },
+      { label: 'Redux Toolkit', icon: 'logos:redux' },
+      { label: 'React Router', icon: 'logos:react-router' },
+      { label: 'Tailwind CSS', icon: 'logos:tailwindcss-icon' },
+    ],
   },
 ];
 
@@ -110,7 +145,6 @@ export const projects = [
     stack: ['Java 21', 'JMH', 'Project Loom'],
     repo: 'https://github.com/DaRealSun/virtualthread-benchmark-lab',
     live: null,
-    featured: true,
   },
   {
     title: 'ai-agent-service',
@@ -119,7 +153,6 @@ export const projects = [
     stack: ['Spring Boot 3', 'LangChain4j', 'pgvector', 'MCP'],
     repo: 'https://github.com/DaRealSun/ai-agent-service',
     live: null,
-    featured: true,
   },
   {
     title: 'Smart Travel Planner',
@@ -128,25 +161,14 @@ export const projects = [
     stack: ['React', 'Spring Boot', 'PostgreSQL'],
     repo: 'https://github.com/DaRealSun/Smart-Travel-Planner',
     live: 'https://solotop.sunhomelab.com/',
-    featured: true,
-  },
-  {
-    title: 'Live Facial Emotion Recognition',
-    blurb:
-      'Undergraduate research at NKU under Dr. Junxiu Zhou. Custom 5-layer CNN in TensorFlow/Keras trained on FER2013 (~36k images). Integrated MediaPipe Face Mesh for real-time tracking at 24 fps. Improved baseline accuracy from 66.61% → 71.20%, peaking at 73.40% in optimal lighting.',
-    stack: ['TensorFlow', 'Keras', 'MediaPipe', 'Python'],
-    repo: null,
-    live: null,
-    featured: false,
   },
   {
     title: 'Netflix GPT',
     blurb:
-      'Netflix-style streaming UI with GPT-powered movie search. React + Redux Toolkit on the frontend, Spring Boot 3 backend handling JWT auth and a server-side TMDB proxy that keeps API tokens off the client. OpenAI-driven recommendation flow turns a free-text mood ("a slow burn thriller, no jump scares") into a curated browse row.',
+      'Netflix-style streaming UI with GPT-powered movie search. React + Redux Toolkit on the frontend, Spring Boot 3 backend handling JWT auth and a server-side TMDB proxy that keeps API tokens off the client. OpenAI-driven recommendation flow turns a free-text mood into a curated browse row.',
     stack: ['React', 'Redux Toolkit', 'Spring Boot', 'PostgreSQL', 'JWT', 'OpenAI'],
     repo: 'https://github.com/DaRealSun/netflix-gpt',
     live: null,
-    featured: true,
   },
   {
     title: 'Job Tracker',
@@ -155,7 +177,18 @@ export const projects = [
     stack: ['React', 'Spring Boot', 'Spring Security', 'PostgreSQL', 'JWT'],
     repo: 'https://github.com/DaRealSun?tab=repositories',
     live: null,
-    featured: true,
+  },
+  {
+    title: 'Live Facial Emotion Recognition',
+    blurb:
+      'Undergraduate research at NKU under Dr. Junxiu Zhou. Custom 5-layer CNN in TensorFlow/Keras trained on FER2013 (~36k images). Integrated MediaPipe Face Mesh for real-time tracking at 24 fps. Improved baseline accuracy from 66.61% → 71.20%, peaking at 73.40% in optimal lighting.',
+    stack: ['TensorFlow', 'Keras', 'MediaPipe', 'Python'],
+    repo: null,
+    live: null,
+    advisor: {
+      name: 'Dr. Junxiu Zhou',
+      url: 'https://www.linkedin.com/in/junxiu-zhou-7b527a103/',
+    },
   },
 ];
 
@@ -177,10 +210,12 @@ export const certifications = [
     name: 'Oracle Certified Professional, Java SE 11 Developer',
     date: 'Feb 2026',
     score: '86%',
+    url: 'https://education.oracle.com/oracle-certified-professional-java-se-11-developer/trackp_OCPJSE11D',
   },
   {
     name: 'Java Certified Foundations Associate',
     date: 'Nov 2025',
     score: null,
+    url: 'https://education.oracle.com/java-certified-foundations-associate/pexam_1Z0-811',
   },
 ];

@@ -10,14 +10,22 @@ import { site, education, certifications } from '../data/site';
         <h2 class="h-display mt-4 text-4xl md:text-5xl">
           Engineer who likes the boring,<br />load-bearing parts.
         </h2>
+        <div class="mt-8 overflow-hidden rounded-2xl border border-border">
+          <img
+            src={site.aboutImage}
+            alt="Son with Duke (Java mascot) at JavaOne"
+            class="aspect-[3/4] w-full object-cover"
+            loading="lazy"
+          />
+        </div>
       </div>
       <div class="reveal" style="transition-delay: 120ms;">
         <div class="space-y-5 text-base leading-relaxed text-text/75 md:text-lg">
           <p>
-            I'm a backend Java engineer based in the {site.location}. I'm happiest
-            when I'm tightening a hot path with JFR, replacing an N+1 with a
-            proper fetch join, or wiring a Spring Boot service to a Kafka topic
-            that downstream consumers can actually rely on.
+            I'm a backend Java engineer based in the {site.location}. I'm
+            happiest when I'm tightening a hot path with JFR, replacing an N+1
+            with a proper fetch join, or wiring a Spring Boot service to a Kafka
+            topic that downstream consumers can actually rely on.
           </p>
           <p>
             Lately I've been deep in <span class="text-accent"
@@ -55,7 +63,28 @@ import { site, education, certifications } from '../data/site';
               {
                 certifications.map((c) => (
                   <li class="text-sm">
-                    <div class="font-medium text-text">{c.name}</div>
+                    {c.url ? (
+                      <a
+                        href={c.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="font-medium text-text transition hover:text-accent inline-flex items-center gap-1.5"
+                      >
+                        {c.name}
+                        <svg
+                          class="h-3 w-3 opacity-60"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path d="M7 17 17 7" />
+                          <path d="M8 7h9v9" />
+                        </svg>
+                      </a>
+                    ) : (
+                      <div class="font-medium text-text">{c.name}</div>
+                    )}
                     <div class="text-xs text-muted">
                       {c.date}
                       {c.score ? ` · Score ${c.score}` : ''}

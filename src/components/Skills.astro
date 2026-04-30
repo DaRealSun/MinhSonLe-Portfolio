@@ -1,8 +1,12 @@
 ---
+import { Icon } from 'astro-icon/components';
 import { skillGroups } from '../data/site';
 
-// Marquee row built from a flat list
-const marqueeItems = skillGroups.flatMap((g) => g.items).slice(0, 18);
+// Marquee row built from a flat list (skills with icons preferred)
+const marqueeItems = skillGroups
+  .flatMap((g) => g.items)
+  .filter((s) => s.icon)
+  .slice(0, 18);
 ---
 
 <section id="skills" class="section">
@@ -18,7 +22,7 @@ const marqueeItems = skillGroups.flatMap((g) => g.items).slice(0, 18);
       </p>
     </div>
 
-    <!-- Marquee -->
+    <!-- Marquee with icons -->
     <div
       class="relative mt-12 overflow-hidden border-y border-border/50 py-5 reveal"
     >
@@ -33,7 +37,12 @@ const marqueeItems = skillGroups.flatMap((g) => g.items).slice(0, 18);
       <div class="flex w-max animate-marquee gap-3">
         {
           [...marqueeItems, ...marqueeItems].map((item) => (
-            <span class="chip whitespace-nowrap text-sm">{item}</span>
+            <span class="chip whitespace-nowrap inline-flex items-center gap-2 text-sm">
+              {item.icon && (
+                <Icon name={item.icon} class="h-4 w-4 flex-shrink-0" />
+              )}
+              {item.label}
+            </span>
           ))
         }
       </div>
@@ -52,7 +61,12 @@ const marqueeItems = skillGroups.flatMap((g) => g.items).slice(0, 18);
             </div>
             <div class="mt-4 flex flex-wrap gap-2">
               {group.items.map((item) => (
-                <span class="chip">{item}</span>
+                <span class="chip inline-flex items-center gap-1.5">
+                  {item.icon && (
+                    <Icon name={item.icon} class="h-3.5 w-3.5 flex-shrink-0" />
+                  )}
+                  {item.label}
+                </span>
               ))}
             </div>
           </div>
