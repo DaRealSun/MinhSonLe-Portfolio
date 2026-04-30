@@ -142,29 +142,20 @@ export const projects = [
   {
     title: 'Netflix GPT',
     blurb:
-      'Netflix-style streaming UI with GPT-powered movie search. Firebase auth, TMDB for movie data, Redux Toolkit for state, and an OpenAI-driven recommendation flow that turns a free-text mood ("a slow burn thriller, no jump scares") into a curated browse row.',
-    stack: ['React', 'Redux Toolkit', 'Firebase Auth', 'TMDB API', 'OpenAI', 'Tailwind'],
+      'Netflix-style streaming UI with GPT-powered movie search. React + Redux Toolkit on the frontend, Spring Boot 3 backend handling JWT auth and a server-side TMDB proxy that keeps API tokens off the client. OpenAI-driven recommendation flow turns a free-text mood ("a slow burn thriller, no jump scares") into a curated browse row.',
+    stack: ['React', 'Redux Toolkit', 'Spring Boot', 'PostgreSQL', 'JWT', 'OpenAI'],
     repo: 'https://github.com/DaRealSun/netflix-gpt',
-    live: 'https://netflix.sunhomelab.com/',
-    featured: true,
-  },
-  {
-    title: 'OrderingFood',
-    blurb:
-      'Swiggy/Uber Eats-style food ordering SPA. Restaurant list with live filtering and search, dynamic menu pages fetched from a real Swiggy API, cart with add/remove, and React Router for navigation. Built from scratch with React 18, Parcel as the bundler, and lazy loading for restaurant detail routes.',
-    stack: ['React 18', 'React Router', 'Parcel', 'Jest'],
-    repo: 'https://github.com/DaRealSun/namaste-react',
-    live: 'https://food.sunhomelab.com/',
+    live: null,
     featured: true,
   },
   {
     title: 'Job Tracker',
     blurb:
-      'Personal job-application tracker. Tracks status, company, role, follow-ups, and interview prep notes in one dashboard.',
-    stack: ['React', 'Spring Boot', 'PostgreSQL'],
+      'Full-stack job-application tracker. Spring Boot 3 + PostgreSQL backend with JWT auth, REST API for CRUD on applications. React frontend with status pipeline (Applied → Phone → Onsite → Offer), follow-up reminders, and interview prep notes per company.',
+    stack: ['React', 'Spring Boot', 'Spring Security', 'PostgreSQL', 'JWT'],
     repo: 'https://github.com/DaRealSun?tab=repositories',
     live: null,
-    featured: false,
+    featured: true,
   },
 ];
 
