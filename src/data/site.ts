@@ -210,12 +210,12 @@ export const certifications = [
     name: 'Oracle Certified Professional, Java SE 11 Developer',
     date: 'Feb 2026',
     score: '86%',
-    url: 'https://education.oracle.com/oracle-certified-professional-java-se-11-developer/trackp_OCPJSE11D',
+    url: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=EF8BFA8A77FE754EDF83F731EDB055D6F56C2C058435A4B9B45B1680D982B4F7',
   },
   {
     name: 'Java Certified Foundations Associate',
     date: 'Nov 2025',
     score: null,
-    url: 'https://education.oracle.com/java-certified-foundations-associate/pexam_1Z0-811',
+    url: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=9FEE79C3BEE8AF1FCF3B74A72C00BD39F75B5E5BC5F1B607F19DB9461E7ED004',
   },
 ];
