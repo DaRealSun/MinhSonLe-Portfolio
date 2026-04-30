@@ -77,7 +77,7 @@ export const experience = [
     role: 'Software Engineer',
     company: 'Health Insurance Care',
     location: 'California, US (Hybrid)',
-    period: 'Jul 2024 – Oct 2025',
+    period: 'Jul 2019 – Oct 2025',
     bullets: [
       'Designed and built an AI document routing agent using Spring AI + LangChain4j with PostgreSQL pgvector. Cut average manual routing time from ~8 minutes to ~2 minutes per case.',
       'Owned 2 of 6 Spring Boot services in a monolith → event-driven Kafka migration. Designed the claim intake service end-to-end (REST API, schema, topic layout).',
@@ -91,7 +91,7 @@ export const experience = [
     role: 'Web Developer',
     company: 'Tristate Health Insurance Group',
     location: 'Cincinnati, OH',
-    period: 'Sep 2021 – Apr 2022',
+    period: 'Sep 2018 – Apr 2019',
     bullets: [
       'Contributed React components and routing for a member-facing SPA serving ~10k monthly users.',
       'Picked Redux Toolkit + async thunks for the agent quoting tool after evaluating Context API and plain hooks.',
@@ -140,13 +140,22 @@ export const projects = [
     featured: false,
   },
   {
-    title: 'netflix-gpt',
+    title: 'Netflix GPT',
     blurb:
-      'Netflix-style movie browser augmented with GPT-driven recommendations. Firebase auth, TMDB API, Redux Toolkit for state.',
-    stack: ['React', 'Redux Toolkit', 'Firebase', 'OpenAI'],
+      'Netflix-style streaming UI with GPT-powered movie search. Firebase auth, TMDB for movie data, Redux Toolkit for state, and an OpenAI-driven recommendation flow that turns a free-text mood ("a slow burn thriller, no jump scares") into a curated browse row.',
+    stack: ['React', 'Redux Toolkit', 'Firebase Auth', 'TMDB API', 'OpenAI', 'Tailwind'],
     repo: 'https://github.com/DaRealSun/netflix-gpt',
-    live: null,
-    featured: false,
+    live: 'https://netflix.sunhomelab.com/',
+    featured: true,
+  },
+  {
+    title: 'OrderingFood',
+    blurb:
+      'Swiggy/Uber Eats-style food ordering SPA. Restaurant list with live filtering and search, dynamic menu pages fetched from a real Swiggy API, cart with add/remove, and React Router for navigation. Built from scratch with React 18, Parcel as the bundler, and lazy loading for restaurant detail routes.',
+    stack: ['React 18', 'React Router', 'Parcel', 'Jest'],
+    repo: 'https://github.com/DaRealSun/namaste-react',
+    live: 'https://food.sunhomelab.com/',
+    featured: true,
   },
   {
     title: 'Job Tracker',
