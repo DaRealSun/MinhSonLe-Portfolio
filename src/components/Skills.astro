@@ -1,0 +1,63 @@
+---
+import { skillGroups } from '../data/site';
+
+// Marquee row built from a flat list
+const marqueeItems = skillGroups.flatMap((g) => g.items).slice(0, 18);
+---
+
+<section id="skills" class="section">
+  <div class="container-x">
+    <div class="max-w-2xl reveal">
+      <span class="heading-eyebrow">Skills</span>
+      <h2 class="h-display mt-4 text-4xl md:text-5xl">
+        The toolkit I reach for.
+      </h2>
+      <p class="mt-4 text-text/70">
+        Day-to-day I'm on the JVM. I pick the rest of the stack to fit the
+        problem and keep the surface area small.
+      </p>
+    </div>
+
+    <!-- Marquee -->
+    <div
+      class="relative mt-12 overflow-hidden border-y border-border/50 py-5 reveal"
+    >
+      <div
+        class="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-bg to-transparent"
+      >
+      </div>
+      <div
+        class="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-bg to-transparent"
+      >
+      </div>
+      <div class="flex w-max animate-marquee gap-3">
+        {
+          [...marqueeItems, ...marqueeItems].map((item) => (
+            <span class="chip whitespace-nowrap text-sm">{item}</span>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Skill groups -->
+    <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        skillGroups.map((group, i) => (
+          <div
+            class="card card-hover p-6 reveal"
+            style={`transition-delay: ${i * 60}ms;`}
+          >
+            <div class="font-display text-lg font-semibold text-text">
+              {group.title}
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2">
+              {group.items.map((item) => (
+                <span class="chip">{item}</span>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

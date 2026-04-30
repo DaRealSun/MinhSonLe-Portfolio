@@ -1,0 +1,81 @@
+---
+import { site } from '../data/site';
+---
+
+<section id="contact" class="section">
+  <div class="container-x">
+    <div
+      class="card relative overflow-hidden p-10 md:p-16 reveal"
+    >
+      <!-- decorative gradient blobs -->
+      <div
+        class="pointer-events-none absolute -top-20 -right-10 h-80 w-80 rounded-full bg-accent/30 blur-[100px]"
+      ></div>
+      <div
+        class="pointer-events-none absolute -bottom-24 -left-10 h-80 w-80 rounded-full bg-accent2/30 blur-[120px]"
+      ></div>
+
+      <div class="relative max-w-3xl">
+        <span class="heading-eyebrow">Contact</span>
+        <h2
+          class="h-display mt-4 text-4xl leading-[1.1] md:text-6xl"
+        >
+          Let's build something <span class="gradient-text">good</span>.
+        </h2>
+        <p class="mt-6 max-w-xl text-lg text-text/75">
+          Looking for a backend Java engineer who can also reason about the
+          frontend, the JVM, and the AI bits? I'd love to hear about it.
+        </p>
+
+        <div class="mt-10 flex flex-wrap items-center gap-3">
+          <a href={`mailto:${site.email}`} class="btn-primary">
+            <svg
+              class="h-4 w-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+              <path d="m3 7 9 6 9-6"></path>
+            </svg>
+            {site.email}
+          </a>
+          <a
+            href={site.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-ghost"
+          >
+            LinkedIn
+          </a>
+          <a
+            href={site.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-ghost"
+          >
+            GitHub
+          </a>
+        </div>
+
+        <div class="mt-10 grid gap-4 text-sm text-text/70 sm:grid-cols-3">
+          <div>
+            <div class="text-xs uppercase tracking-wider text-muted">Email</div>
+            <div class="mt-1 text-text">{site.email}</div>
+          </div>
+          <div>
+            <div class="text-xs uppercase tracking-wider text-muted">Phone</div>
+            <div class="mt-1 text-text">{site.phone}</div>
+          </div>
+          <div>
+            <div class="text-xs uppercase tracking-wider text-muted">
+              Location
+            </div>
+            <div class="mt-1 text-text">{site.location}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

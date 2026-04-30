@@ -1,0 +1,44 @@
+---
+import { experience } from '../data/site';
+---
+
+<section id="experience" class="section">
+  <div class="container-x">
+    <div class="max-w-2xl reveal">
+      <span class="heading-eyebrow">Experience</span>
+      <h2 class="h-display mt-4 text-4xl md:text-5xl">Where I've shipped.</h2>
+    </div>
+
+    <div class="mt-14 space-y-6">
+      {
+        experience.map((job, i) => (
+          <article
+            class="card card-hover group reveal"
+            style={`transition-delay: ${i * 80}ms;`}
+          >
+            <div class="grid gap-6 p-6 md:grid-cols-[260px_1fr] md:p-8">
+              <div>
+                <div class="text-xs uppercase tracking-[0.2em] text-muted">
+                  {job.period}
+                </div>
+                <div class="mt-3 font-display text-xl font-semibold text-text">
+                  {job.role}
+                </div>
+                <div class="mt-1 text-sm text-accent">{job.company}</div>
+                <div class="mt-1 text-xs text-muted">{job.location}</div>
+              </div>
+              <ul class="space-y-3 text-sm leading-relaxed text-text/75 md:text-[15px]">
+                {job.bullets.map((b) => (
+                  <li class="flex gap-3">
+                    <span class="mt-2 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

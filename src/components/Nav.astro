@@ -1,0 +1,56 @@
+---
+import { site } from '../data/site';
+
+const links = [
+  { href: '#about', label: 'About' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+
+<header
+  class="sticky top-0 z-40 border-b border-border/40 bg-bg/70 backdrop-blur-xl"
+>
+  <div class="container-x flex h-16 items-center justify-between">
+    <a
+      href="#top"
+      class="flex items-center gap-2 font-display text-base font-semibold tracking-tight"
+    >
+      <span
+        class="grid h-7 w-7 place-items-center rounded-md bg-gradient-to-br from-accent to-accent2 text-black font-bold"
+        >S</span
+      >
+      <span class="hidden sm:inline">{site.name}</span>
+    </a>
+    <nav class="hidden items-center gap-1 md:flex">
+      {
+        links.map((l) => (
+          <a
+            href={l.href}
+            class="rounded-full px-4 py-2 text-sm text-text/70 transition hover:bg-text/5 hover:text-text"
+          >
+            {l.label}
+          </a>
+        ))
+      }
+    </nav>
+    <a href={site.resumeUrl} class="btn-primary text-xs sm:text-sm" download>
+      Resume
+      <svg
+        class="h-3.5 w-3.5"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+    </a>
+  </div>
+</header>

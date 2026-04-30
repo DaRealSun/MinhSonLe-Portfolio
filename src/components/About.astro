@@ -1,0 +1,72 @@
+---
+import { site, education, certifications } from '../data/site';
+---
+
+<section id="about" class="section">
+  <div class="container-x">
+    <div class="grid gap-16 md:grid-cols-[1fr_2fr]">
+      <div class="reveal">
+        <span class="heading-eyebrow">About</span>
+        <h2 class="h-display mt-4 text-4xl md:text-5xl">
+          Engineer who likes the boring,<br />load-bearing parts.
+        </h2>
+      </div>
+      <div class="reveal" style="transition-delay: 120ms;">
+        <div class="space-y-5 text-base leading-relaxed text-text/75 md:text-lg">
+          <p>
+            I'm a backend Java engineer based in the {site.location}. I'm happiest
+            when I'm tightening a hot path with JFR, replacing an N+1 with a
+            proper fetch join, or wiring a Spring Boot service to a Kafka topic
+            that downstream consumers can actually rely on.
+          </p>
+          <p>
+            Lately I've been deep in <span class="text-accent"
+              >Retrieval Augmented Generation</span
+            > with Spring AI and LangChain4j, and benchmarking
+            <span class="text-accent2">Java Virtual Threads</span> against the older
+            executor world. I publish the benchmarks and write up the tradeoffs
+            on GitHub so the work isn't just a claim on a resume.
+          </p>
+          <p>
+            I own services end-to-end: API contract, schema, deploy,
+            observability, and the on-call pager. I'd rather ship one durable
+            service than five clever ones.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-4 sm:grid-cols-2">
+          <div class="card p-5">
+            <div class="text-xs uppercase tracking-wider text-muted">
+              Education
+            </div>
+            <div class="mt-2 font-display text-base font-semibold">
+              {education.school}
+            </div>
+            <div class="mt-1 text-sm text-text/70">{education.degree}</div>
+            <div class="mt-1 text-xs text-muted">
+              GPA {education.gpa} · Graduated {education.graduated}
+            </div>
+          </div>
+          <div class="card p-5">
+            <div class="text-xs uppercase tracking-wider text-muted">
+              Certifications
+            </div>
+            <ul class="mt-2 space-y-2">
+              {
+                certifications.map((c) => (
+                  <li class="text-sm">
+                    <div class="font-medium text-text">{c.name}</div>
+                    <div class="text-xs text-muted">
+                      {c.date}
+                      {c.score ? ` · Score ${c.score}` : ''}
+                    </div>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
