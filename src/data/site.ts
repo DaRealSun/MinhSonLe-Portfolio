@@ -139,6 +139,24 @@ export const experience = [
 
 export const projects = [
   {
+    title: 'castellan-shadow',
+    blurb:
+      'Live attribution-grade dashboard for two public ETFs (CTEF, CTIF). Spring Boot 3.4 ETL scrapes the daily holdings tables on castellanetf.com and parses SEC Part F PDFs with Apache PDFBox; the schema models FLEX option contracts in a deduped table so the 1×2 ratio call spreads on DECK / JBL / MU / NCLH land with correct sign and FK linkage. Astro 5 + Tailwind frontend deployed to Cloudflare.',
+    stack: [
+      'Spring Boot 3.4',
+      'Java 21',
+      'Apache PDFBox',
+      'Jsoup',
+      'PostgreSQL',
+      'Flyway',
+      'Astro 5',
+      'Tailwind',
+      'Cloudflare',
+    ],
+    repo: 'https://github.com/DaRealSun/castellan-shadow',
+    live: 'https://castellan-shadow.sunhomelab.com',
+  },
+  {
     title: 'virtualthread-benchmark-lab',
     blurb:
       'JMH benchmark suite comparing ExecutorService against Java Virtual Threads across I/O-bound, CPU-bound, and mixed workloads. Surfaces concrete throughput and latency tradeoffs and documents carrier-thread pinning behavior.',
