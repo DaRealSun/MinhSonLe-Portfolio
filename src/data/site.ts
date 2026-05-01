@@ -139,6 +139,25 @@ export const experience = [
 
 export const projects = [
   {
+    title: 'profound-pipeline',
+    blurb:
+      'M&A-first cyber buyer-list intel for Cyber Profound (cybersecurity rollup). 12 mid-market cyber M&A advisors ranked by composite score: 75% deal-data signal (recent activity, sub-sector specialization, deal-size fit) + 25% NLP icing. Sentence-BERT (all-MiniLM-L6-v2 via @xenova/transformers) for thesis alignment, Z-scored against a 10-text generic-business null distribution with bootstrap CIs. Real cyber sub-sector multiple bands and 8 verified comp tombstones (8-K/proxy-disclosed advisors). Vitest 30/30, GitHub Actions nightly cron.',
+    stack: [
+      'Astro 5',
+      'Tailwind',
+      'TypeScript',
+      'Sentence-BERT',
+      'Transformers.js',
+      'ONNX',
+      'Cheerio',
+      'Vitest',
+      'Cloudflare Workers',
+      'GitHub Actions',
+    ],
+    repo: 'https://github.com/DaRealSun/profound-pipeline',
+    live: 'https://pipeline.sunhomelab.com',
+  },
+  {
     title: 'castellan-shadow',
     blurb:
       'Live attribution-grade dashboard for two public ETFs (CTEF, CTIF). Spring Boot 3.4 ETL scrapes the daily holdings tables on castellanetf.com and parses SEC Part F PDFs with Apache PDFBox; the schema models FLEX option contracts in a deduped table so the 1×2 ratio call spreads on DECK / JBL / MU / NCLH land with correct sign and FK linkage. Astro 5 + Tailwind frontend deployed to Cloudflare.',
