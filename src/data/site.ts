@@ -110,8 +110,8 @@ export const skillGroups: { title: string; items: Skill[] }[] = [
 export const experience = [
   {
     role: 'Software Engineer',
-    company: 'Health Insurance Care',
-    location: 'California, US',
+    company: 'FPT Software (Contract)',
+    location: 'Remote, Vietnam',
     period: 'Jul 2022 – Oct 2025',
     bullets: [
       'Designed and built an AI document routing agent using Spring AI + LangChain4j with PostgreSQL pgvector. Cut average manual routing time from ~8 minutes to ~2 minutes per case.',
@@ -124,8 +124,8 @@ export const experience = [
   },
   {
     role: 'Web Developer',
-    company: 'Tristate Health Insurance Group',
-    location: 'Cincinnati, OH',
+    company: 'FPT Software (Contract)',
+    location: 'Remote, Vietnam',
     period: 'Sep 2021 – Apr 2022',
     bullets: [
       'Contributed React components and routing for a member-facing SPA serving ~10k monthly users.',
